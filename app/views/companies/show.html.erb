@@ -1,0 +1,15 @@
+<h1><%= @company.name %></h1>
+  <%= image_tag @company.logo %>
+  
+  <p> Descrição </p>
+  <p> <%= @company.description %> </p>
+  <p> Endereço </p>
+  <p> <%= @company.address %> </p>
+  <p> CNPJ </p>
+  <p> <%= @company.cnpj %> </p>
+  <p> site </p>
+  <p> <%= @company.site %> </p>
+  <p> linkedin </p>
+  <p> <%= @company.linkedin %> </p>
+
+<%= link_to 'Voltar', companies_path %> 

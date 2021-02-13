@@ -1,0 +1,27 @@
+<h1>Cadastrar Empresa</h1>
+
+<%= form_with(model: Company.new) do |f| %>
+
+  <%= f.label :logo, 'Logo' %>
+  <%= f.file_field :logo %>
+
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_field :description %>
+
+  <%= f.label :address, 'Endereço' %>
+  <%= f.text_field :address %>
+
+  <%= f.label :cnpj, 'CNPJ' %>
+  <%= f.text_field :cnpj %>
+
+  <%= f.label :site, 'Site' %>
+  <%= f.text_field :site %>
+
+  <%= f.label :linkedin, 'Linkedin' %>
+  <%= f.text_field :linkedin %>
+
+  <%= f.submit 'Cadastrar Empresa' %>
+<% end %>
