@@ -1,29 +1,32 @@
 <h1>Cadastrar Empresa</h1>
 <% if @company.errors.any? %>
-  <p>preencha todos os campos</p>
+  <p>Preencha todos os campos</p>
+  <% @company.errors.full_messages.each do |message| %>
+    <li> <%= message %> </li>
+  <% end %>
 <% end %>
 
 <%= form_with(model: Company.new) do |f| %>
 
-  <%= f.label :logo, 'Logo' %>
+  <%= f.label :logo %>
   <%= f.file_field :logo %>
 
-  <%= f.label :name, 'Nome' %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :description, 'Descrição' %>
+  <%= f.label :description %>
   <%= f.text_field :description %>
 
-  <%= f.label :address, 'Endereço' %>
+  <%= f.label :address %>
   <%= f.text_field :address %>
 
-  <%= f.label :cnpj, 'CNPJ' %>
+  <%= f.label :cnpj %>
   <%= f.text_field :cnpj %>
 
-  <%= f.label :site, 'Site' %>
+  <%= f.label :site %>
   <%= f.text_field :site %>
 
-  <%= f.label :linkedin, 'Linkedin' %>
+  <%= f.label :linkedin %>
   <%= f.text_field :linkedin %>
 
   <%= f.submit 'Cadastrar Empresa' %>

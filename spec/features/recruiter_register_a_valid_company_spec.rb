@@ -16,7 +16,13 @@ feature 'Recruiter register a valid company' do
     click_on 'Cadastrar Empresa'
 
     expect(Company.count).to eq 0
-    expect(page).to have_content('preencha todos os campos')
+    expect(page).to have_content('Preencha todos os campos')
+    expect(page).to have_content('Nome não pode ficar em branco')
+    expect(page).to have_content('Descrição não pode ficar em branco')
+    expect(page).to have_content('Endereço não pode ficar em branco')
+    expect(page).to have_content('CNPJ não pode ficar em branco')
+    expect(page).to have_content('Site não pode ficar em branco')
+    expect(page).to have_content('Linkedin não pode ficar em branco')
   end
 
   scenario 'and CNPJ must be unique' do
@@ -29,9 +35,9 @@ feature 'Recruiter register a valid company' do
     click_on 'Empresas'
     click_on 'Cadastrar empresa'    
     fill_in 'CNPJ', with: '31.565.104/0001-77'
-    click_on 'Cadastrar empresa'
+    click_on 'Cadastrar Empresa'
 
-    expect(page).to have_content('CNPJ já existe')
+    expect(page).to have_content('CNPJ já está em uso')
                   
   end
 end
