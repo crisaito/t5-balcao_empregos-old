@@ -1,4 +1,7 @@
 <h1>Cadastrar Empresa</h1>
+<% if @company.errors.any? %>
+  <p>preencha todos os campos</p>
+<% end %>
 
 <%= form_with(model: Company.new) do |f| %>
 

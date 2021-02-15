@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
   end
 
   def new
+    @company = Company.new
   end
 
   def create
@@ -19,7 +20,10 @@ class CompaniesController < ApplicationController
       :site,
       :linkedin,
       :logo))
-    @company.save
-    redirect_to company_path(id: @company.id)
+    if @company.save
+      redirect_to @company
+    else  
+      render 'new'
+    end
   end
 end

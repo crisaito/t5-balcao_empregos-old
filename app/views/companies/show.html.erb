@@ -1,6 +1,9 @@
 <h1><%= @company.name %></h1>
-  <%= image_tag @company.logo %>
   
+  <% if @company.logo.attached? %>
+    <%= image_tag @company.logo %> 
+  <% end %>
+    
   <p> Descrição </p>
   <p> <%= @company.description %> </p>
   <p> Endereço </p>
