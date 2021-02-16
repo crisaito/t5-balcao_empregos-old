@@ -15,4 +15,14 @@
   <p> linkedin </p>
   <p> <%= @company.linkedin %> </p>
 
+  <p>Vagas Disponíveis</p>
+
+<div>
+  <% @jobs.each do |job| %>
+    <h3> <%= link_to job.title, job_path(job.id) %> </h3>
+    <p> <%= job.experience_level %> </p>
+    <p> <%= job.compensation %> </p>
+  <% end %>
+</div>
+
 <%= link_to 'Voltar', companies_path %> 
