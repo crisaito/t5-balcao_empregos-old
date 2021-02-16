@@ -9,7 +9,7 @@ feature 'Visitor view jobs' do
     Job.create!(title: 'Senior developer', description: 'Principais Atividades: 
                 Desenvolver serviços web funcionais utilizando HTML5, 
                 FluentUI, Node.js, Ruby on Rails, React', 
-                compensation: '10.000', experience_level: 'Senior', 
+                compensation: '10000', experience_level: 'Senior', 
                 requirements: 'Foco em performance, Ruby on Rails', 
                 expiration_date: '21/02/2021',
                 total_jobs:'5', company: pepsico)
@@ -19,7 +19,7 @@ feature 'Visitor view jobs' do
     click_on 'Pepsi'
 
     expect(page).to have_content('Senior developer')
-    expect(page).to have_content('10.0')
+    expect(page).to have_content('R$ 10.000')
     expect(page).to have_content('Senior')
   end
 
@@ -31,9 +31,9 @@ feature 'Visitor view jobs' do
     Job.create!(title: 'Senior developer', description: 'Principais Atividades: 
                 Desenvolver serviços web funcionais utilizando HTML5, 
                 FluentUI, Node.js, Ruby on Rails, React', 
-                compensation: '10.0', experience_level: 'Senior', 
+                compensation: '10000', experience_level: 'Senior', 
                 requirements: 'Foco em performance, Ruby on Rails', 
-                expiration_date: '2021-02-21',
+                expiration_date: '21/02/2021',
                 total_jobs:'5', company: pepsico)
 
     visit root_path
@@ -45,10 +45,10 @@ feature 'Visitor view jobs' do
     expect(page).to have_content('Principais Atividades: Desenvolver '\
                                  'serviços web funcionais utilizando HTML5, '\
                                  'FluentUI, Node.js, Ruby on Rails, React')
-    expect(page).to have_content('10.0')
+    expect(page).to have_content('R$ 10.000')
     expect(page).to have_content('Senior')
     expect(page).to have_content('Foco em performance, Ruby on Rails')
-    expect(page).to have_content('2021-02-21')
+    expect(page).to have_content('21/02/2021')
     expect(page).to have_content('5')
   end
 end
