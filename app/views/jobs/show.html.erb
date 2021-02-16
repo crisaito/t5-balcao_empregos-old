@@ -1,0 +1,10 @@
+<h1> <%= @job.title %></h1>
+
+<p> <%= @job.description %> </p>
+<p> <%= @job.compensation %> </p>
+<p> <%= @job.experience_level %> </p>
+<p> <%= @job.requirements %> </p>
+<p> <%= @job.expiration_date %> </p>
+<p> <%= @job.total_jobs %> </p>
+
+<%= link_to 'Voltar para Vagas', company_path(@company.id)%>
