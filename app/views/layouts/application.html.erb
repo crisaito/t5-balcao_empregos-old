@@ -10,7 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body> 
+    <nav>
+      <% if recruiter_signed_in? %>
+        <%= current_recruiter.email %>
+        <%= link_to 'Sair', destroy_recruiter_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Entrar', new_recruiter_session_path %>
+      <% end %>
+    </nav>
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
