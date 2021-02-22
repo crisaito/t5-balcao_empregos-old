@@ -14,6 +14,7 @@
     <nav>
       <% if recruiter_signed_in? %>
         <%= current_recruiter.email %>
+        <p> Empresa:  <%= current_recruiter.company_name %></p>
         <%= link_to 'Sair', destroy_recruiter_session_path, method: :delete %>
       <% else %>
         <%= link_to 'Entrar', new_recruiter_session_path %>
