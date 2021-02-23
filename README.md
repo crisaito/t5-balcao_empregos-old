@@ -8,3 +8,4 @@ Projeto consiste na criação de uma plataforma Web para que pessoas dos departa
 ## Gems utilizadas
 * [Rspec](https://github.com/rspec/rspec-rails)
 * [Capybara](https://github.com/teamcapybara/capybara)
+* [Devise](https://github.com/heartcombo/devise)
