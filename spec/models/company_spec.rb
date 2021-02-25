@@ -32,5 +32,26 @@ describe Company do
 
       expect(company.errors[:cnpj]).to include('já está em uso')
     end
+
+    it 'name cannot be duplicate' do
+      Company.create(name: 'Dolly', description: 'Guaraná do Brasil', 
+                      address: 'São Paulo, SP', cnpj: '07.526.507/0001-00', 
+                      site: 'www.guarana.com.br', 
+                      linkedin: 'www.linkedin.com/company/guarana')
+      Company.create(name: 'Sukita', description: 'Guaraná do Brasil', 
+                      address: 'São Paulo, SP', cnpj: '07.526.557/0000-00', 
+                      site: 'www.guarana.com.br', 
+                      linkedin: 'www.linkedin.com/company/guarana')
+      Company.create(name: 'Dolly', description: 'Guaraná do Brasil', 
+                      address: 'São Paulo, SP', cnpj: '07.506.557/0001-00', 
+                      site: 'www.guarana.com.br', 
+                      linkedin: 'www.linkedin.com/company/guarana')
+      Company.create(name: 'Guaraná', description: 'Guaraná do Brasil', 
+                      address: 'São Paulo, SP', cnpj: '00.526.557/0001-00', 
+                      site: 'www.guarana.com.br', 
+                      linkedin: 'www.linkedin.com/company/guarana')
+                            
+      expect(Company.count).to eq 3
+    end
   end
 end
